@@ -52,6 +52,11 @@ sudo apt install scribus
 
 
 
+Быстрая установка всего пакета
+sudo apt update && sudo apt install gimp inkscape krita blender darktable shotwell scribus font-manager
+
+
+
 Font Manager (шрифты)
 sudo apt install font-manager
 Для чего: установка и управление шрифтами
