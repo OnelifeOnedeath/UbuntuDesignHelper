@@ -16,3 +16,20 @@ mkdir -p $BACKUP_DIR
 tar -czf "$BACKUP_DIR/projects_backup_$DATE.tar.gz" "$PROJECTS_DIR"
 
 echo "✅ Бэкап создан: $BACKUP_DIR/projects_backup_$DATE.tar.gz"
+
+
+Добавить в крон (ежедневно в 18:00):
+crontab -e
+# Добавить строку:
+0 18 * * * /home/username/backup_script.sh
+
+
+Внешние хранилища
+Резервная копия на флешку:
+# Подключить флешку, затем:
+rsync -av ~/Проекты/ /media/$USER/FLASHDRIVE/Backups/
+
+
+Экстренное восстановление
+Восстановить из бэкапа:
+tar -xzf projects_backup_20241215_180000.tar.gz -C ~/
